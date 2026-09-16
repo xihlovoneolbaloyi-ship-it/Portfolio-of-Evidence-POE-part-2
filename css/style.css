@@ -1,0 +1,281 @@
+/* ==========================================================================
+   Sweet Crumbs Bakery — main stylesheet
+   Sections: variables, base/reset, header & nav, layout helpers,
+   cards & grids, gallery, form, footer, pseudo-class states, media queries
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap");
+
+/* ---- Design tokens ------------------------------------------------------ */
+:root {
+  --brown: #6b3e2e;
+  --cream: #fff8ee;
+  --peach: #f7d7c4;
+  --gold: #d99a3d;
+  --ink: #2f211c;
+  --white: #fff;
+  --muted: #6f625c;
+  --shadow: 0 12px 30px rgba(65, 35, 20, .12);
+}
+
+/* ---- Base / reset -------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: Poppins, Arial, sans-serif;
+  line-height: 1.2;
+}
+
+a { color: inherit; }
+
+/* Responsive media: images and inline SVGs never overflow their container */
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Skip-to-content link: hidden until keyboard-focused */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 10px;
+  top: 10px;
+  background: #fff;
+  padding: 8px;
+  z-index: 99;
+}
+
+/* ---- Header / navigation -------------------------------------------------- */
+.site-header {
+  background: var(--brown);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .12);
+}
+.nav-wrap {
+  max-width: 1150px;
+  margin: auto;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.brand {
+  text-decoration: none;
+  font: 700 1.35rem Poppins;
+}
+.brand span { color: var(--peach); }
+
+nav { display: flex; flex-wrap: wrap; gap: 6px; }
+nav a {
+  padding: 8px 11px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: .92rem;
+  transition: background-color .15s ease;
+}
+/* Pseudo-classes: hover, current-page (attribute) and keyboard focus states */
+nav a:hover,
+nav a[aria-current="page"] { background: rgba(255, 255, 255, .16); }
+nav a:focus-visible {
+  outline: 2px solid var(--peach);
+  outline-offset: 2px;
+}
+nav a:active { transform: translateY(1px); }
+
+main { max-width: 1150px; margin: auto; padding: 55px 22px; }
+
+/* ---- Hero (home page) ----------------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 40px;
+  align-items: center;
+  min-height: 520px;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9a5b36;
+  font-weight: 700;
+}
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4.7rem); margin: 12px 0; }
+.hero p { font-size: 1.12rem; color: var(--muted); max-width: 650px; }
+
+.buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+.btn {
+  display: inline-block;
+  background: var(--brown);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: 2px solid var(--brown);
+  transition: transform .15s ease, background-color .15s ease;
+}
+.btn.secondary { background: transparent; color: var(--brown); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.btn:active { transform: translateY(0); }
+
+.hero-art, .card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+.hero-art {
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(145deg, #f9dfcf, #fff);
+}
+.hero-art img { margin: 0 auto 10px; }
+
+/* ---- Section headings, cards & grids -------------------------------------- */
+.section-head { text-align: center; margin-bottom: 35px; }
+.section-head p { color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.card {
+  padding: 25px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card h3 { margin-top: 8px; }
+.icon { width: 56px; height: 56px; margin-bottom: 4px; }
+.price { font-weight: 700; color: #9a5b36; font-size: 1.1rem; }
+
+/* Alternate card backgrounds slightly for visual rhythm, and lift on hover */
+.grid .card:nth-child(odd) { background: #fff; }
+.grid .card:nth-child(even) { background: #fffaf4; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(65, 35, 20, .16); }
+.card:first-child { border-top: 3px solid var(--gold); }
+
+.band { background: var(--peach); border-radius: 24px; padding: 38px; margin: 35px 0; }
+.list { padding-left: 20px; }
+.list li:not(:last-child) { margin-bottom: 6px; }
+
+/* ---- Page title banner ----------------------------------------------------- */
+.page-title {
+  background: linear-gradient(120deg, #f7d7c4, #fff8ee);
+  border-radius: 22px;
+  padding: 45px;
+  margin-bottom: 35px;
+}
+.page-title h1 { font-size: 3rem; margin: 0 0 10px; }
+
+/* ---- Gallery --------------------------------------------------------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.gallery figure {
+  margin: 0;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease;
+}
+.gallery figure:hover { transform: translateY(-4px); }
+.gallery .pic { height: 210px; overflow: hidden; }
+.gallery .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+figcaption { padding: 15px; font-weight: 700; }
+
+/* ---- Enquiry form ------------------------------------------------------------ */
+.form {
+  max-width: 760px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+label { display: block; font-weight: 700; margin: 16px 0 7px; }
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cdbeb5;
+  border-radius: 9px;
+  font: inherit;
+  background: #fff;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+textarea { min-height: 140px; resize: vertical; }
+
+/* Focus and validity pseudo-classes on form controls */
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(217, 154, 61, .25);
+}
+input:invalid:not(:placeholder-shown) { border-color: #c95a5a; }
+input:required + .error, select:required + .error, textarea:required + .error {
+  font-weight: 600;
+}
+
+.error { color: #a22; font-size: .9rem; display: block; margin-top: 4px; }
+.success { background: #e6f5e9; border-left: 5px solid #39834a; padding: 14px; margin-top: 20px; border-radius: 8px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+
+/* ---- Footer ------------------------------------------------------------------ */
+.site-footer { background: var(--brown); color: #fff; margin-top: 40px; }
+.footer-inner {
+  max-width: 1150px;
+  margin: auto;
+  padding: 35px 22px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 25px;
+}
+.footer-inner a { color: #fff; }
+.footer-inner a:hover { text-decoration: underline; }
+.copyright { text-align: center; border-top: 1px solid rgba(255, 255, 255, .2); padding: 15px; }
+.small { font-size: .9rem; color: #e9ddd8; }
+
+/* ==========================================================================
+   Responsive breakpoints — tablet and mobile
+   ========================================================================== */
+@media (max-width: 800px) {
+  .hero, .contact-grid { grid-template-columns: 1fr; }
+  .grid, .gallery { grid-template-columns: 1fr 1fr; }
+  .nav-wrap { align-items: flex-start; flex-direction: column; }
+  .page-title h1 { font-size: 2.3rem; }
+  .gallery .pic { height: 180px; }
+}
+
+@media (max-width: 520px) {
+  main { padding: 35px 16px; }
+  .grid, .gallery { grid-template-columns: 1fr; }
+  .hero { min-height: auto; }
+  .hero-art img { width: 70%; }
+  .footer-inner { grid-template-columns: 1fr; }
+  nav a { font-size: .85rem; padding: 6px 8px; }
+  .gallery .pic { height: 220px; }
+}
