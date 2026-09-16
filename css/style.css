@@ -38,6 +38,18 @@ h1, h2, h3 {
 
 a { color: inherit; }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Responsive media: images and inline SVGs never overflow their container */
 img, svg {
   max-width: 100%;
@@ -83,6 +95,22 @@ img, svg {
 }
 .brand span { color: var(--peach); }
 
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid rgba(255, 255, 255, .4);
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+.nav-toggle:hover { background: rgba(255, 255, 255, .12); }
+.nav-toggle:focus-visible { outline: 3px solid var(--peach); outline-offset: 2px; }
+.nav-toggle:active { transform: translateY(1px); }
 nav { display: flex; flex-wrap: wrap; gap: 6px; }
 nav a {
   padding: 8px 11px;
@@ -276,6 +304,24 @@ input:required + .error, select:required + .error, textarea:required + .error {
   .hero { min-height: auto; }
   .hero-art img { width: 70%; }
   .footer-inner { grid-template-columns: 1fr; }
-  nav a { font-size: .85rem; padding: 6px 8px; }
+  .nav-wrap {
+    width: 100%;
+    align-items: stretch;
+  }
+  .nav-toggle { display: inline-flex; align-self: flex-end; }
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 4px;
+  }
+  nav.is-open { display: flex; }
+  nav a { font-size: .9rem; padding: 9px 10px; }
   .gallery .pic { height: 220px; }
+}
+
+/* Respect reduced-motion preferences so decorative movement never becomes a usability barrier. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }

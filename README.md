@@ -23,7 +23,7 @@ Sweet Crumbs Bakery is a responsive multi-page bakery website designed to provid
 - Original SVG imagery: hero illustration, 13 card icons and 6 gallery
   images in `assets/`, all responsive (`max-width: 100%`, `object-fit`)
 - Responsive layouts using CSS Grid, Flexbox and two media query breakpoints
-  (800px, 520px)
+  (800px, 520px), plus an accessible mobile navigation toggle
 - Pseudo-class states throughout: `:hover`, `:focus-visible`, `:active`,
   `:nth-child()`, `:first-child`, `:not(:last-child)`, `:invalid`
 - Accessible labels, skip link, current-page navigation and live validation
@@ -31,6 +31,8 @@ Sweet Crumbs Bakery is a responsive multi-page bakery website designed to provid
 - Client-side required-field and email validation
 - Consistent navigation and footer across all pages
 - Sources cited in `REFERENCES.md`
+- Part 1 feedback traceability in `FEEDBACK_MATRIX.md`
+- Final pre-submission checks in `SUBMISSION_CHECKLIST.md`
 
 ## Folder structure
 ```text

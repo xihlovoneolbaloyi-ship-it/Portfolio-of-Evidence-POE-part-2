@@ -1,3 +1,25 @@
+// Shared responsive navigation: converts the desktop navigation into an
+// accessible mobile menu at the smallest breakpoint.
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.getElementById("primary-menu");
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    menu.classList.toggle("is-open", !open);
+  });
+
+  // Close the menu after a navigation link is selected.
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      toggle.setAttribute("aria-expanded", "false");
+      menu.classList.remove("is-open");
+    });
+  });
+});
+
 // Sweet Crumbs Bakery: client-side enquiry validation and feedback.
 // Runs only on enquiry.html — every other page loads this file harmlessly
 // because the guard clause below exits early when the form isn't present.

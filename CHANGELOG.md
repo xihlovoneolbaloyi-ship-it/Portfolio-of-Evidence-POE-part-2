@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-16 - 1.2.0
+- Added an accessible mobile navigation toggle to all seven pages using `aria-expanded` and `aria-controls`.
+- Added keyboard-focus styling to the navigation toggle and a visually hidden screen-reader label.
+- Added reduced-motion support for users who prefer less animation.
+- Added `FEEDBACK_MATRIX.md` to explicitly trace Part 1 feedback to Part 2 changes.
+- Added `SUBMISSION_CHECKLIST.md` with final technical, documentation and manual testing checks.
+- Updated the README to document the mobile navigation and feedback-traceability files.
+
+
 ## 2026-09-16 - 1.1.0
 Response to feedback that the site used emoji as placeholder imagery, had thin
 pseudo-class coverage, and was missing a references list and readable/commented
