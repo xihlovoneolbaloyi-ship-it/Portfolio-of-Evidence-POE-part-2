@@ -191,6 +191,14 @@ main { max-width: 1150px; margin: auto; padding: 55px 22px; }
   transition: transform .15s ease, box-shadow .15s ease;
 }
 .card h3 { margin-top: 8px; }
+.photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 22px rgba(65, 35, 20, .12);
+}
 .icon { width: 56px; height: 56px; margin-bottom: 4px; }
 .price { font-weight: 700; color: #9a5b36; font-size: 1.1rem; }
 

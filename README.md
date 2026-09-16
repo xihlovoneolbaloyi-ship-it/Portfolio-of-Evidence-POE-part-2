@@ -72,3 +72,13 @@ Open `index.html` in a modern browser. No server or build process is required.
 
 ## Academic alignment
 The project is structured to support the WEDE5020 rubric areas for semantic HTML, sufficient content, navigation, comments, responsive presentation, project organisation and GitHub documentation.
+
+## Real image sources
+The website uses real bakery photographs from Wikimedia Commons. The selected Unsplash photographs were published before 5 June 2017 under the Creative Commons CC0 1.0 dedication, as documented on their Wikimedia Commons file pages.
+
+Sources used: 
+- The Bakery (Unsplash), Rhett Noonan: https://commons.wikimedia.org/wiki/File:The_Bakery_(Unsplash).jpg
+- Chocolate Cake (Unsplash), Toa Heftiba: https://commons.wikimedia.org/wiki/File:Chocolate_Cake_(Unsplash).jpg
+- Gourmet Cupcakes (Unsplash), Clem Onojeghuo: https://commons.wikimedia.org/wiki/File:Gourmet_Cupcakes_(Unsplash).jpg
+- Bread at a Bakery (Unsplash), Roman Kraft: https://commons.wikimedia.org/wiki/File:Bread_at_a_Bakery_(Unsplash).jpg
+- Artisan Loaves of Bread (Unsplash), Drew Coffman: https://commons.wikimedia.org/wiki/File:Artisan_Loaves_of_Bread_(Unsplash).jpg

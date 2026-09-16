@@ -43,3 +43,7 @@ source files.
 - Added success feedback after valid form submission.
 - Added README documentation and testing checklist.
 - Added descriptive JavaScript and CSS comments.
+
+- Replaced decorative bakery SVG imagery with real bakery photographs from Wikimedia Commons/Unsplash.
+- Added responsive photo styling for product, service and gallery cards.
+- Added image-source and licensing documentation to README.
