@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-labelledby="title-gallery-chocolate-cake">
+  <title id="title-gallery-chocolate-cake">Chocolate celebration cake</title>
+  <defs>
+    <linearGradient id="bg-gallery-chocolate-cake" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7d7c4"/>
+      <stop offset="1" stop-color="#d99a3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg-gallery-chocolate-cake)"/>
+  <g transform="translate(136,86) scale(2)">
+    
+    <g stroke="#6b3e2e" stroke-width="1.5">
+      <rect x="18" y="38" width="28" height="12" rx="2" fill="#f7d7c4"/>
+      <rect x="22" y="26" width="20" height="12" rx="2" fill="#d99a3d"/>
+      <rect x="26" y="16" width="12" height="10" rx="2" fill="#f7d7c4"/>
+      <path d="M32 10 L32 16" stroke="#6b3e2e" stroke-width="2"/>
+      <circle cx="32" cy="8" r="2.5" fill="#6b3e2e"/>
+    </g>
+    <path d="M18 44 h28 M22 32 h20" stroke="#ffffff" stroke-width="1.5" opacity=".7"/>
+  </g>
+</svg>

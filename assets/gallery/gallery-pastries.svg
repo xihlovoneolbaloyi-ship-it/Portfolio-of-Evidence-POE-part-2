@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-labelledby="title-gallery-pastries">
+  <title id="title-gallery-pastries">Morning pastries</title>
+  <defs>
+    <linearGradient id="bg-gallery-pastries" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7d7c4"/>
+      <stop offset="1" stop-color="#d99a3d"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg-gallery-pastries)"/>
+  <g transform="translate(136,86) scale(2)">
+    
+    <path d="M14 38 C16 20 34 14 48 24 C42 24 36 28 34 34 C40 32 44 34 46 38 C36 40 34 44 40 48 C28 48 16 46 14 38 Z" fill="#d99a3d" stroke="#6b3e2e" stroke-width="1.2"/>
+  </g>
+</svg>
